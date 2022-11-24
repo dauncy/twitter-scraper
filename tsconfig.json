@@ -1,0 +1,24 @@
+{
+  "include": [
+    "./app.js",
+    "./src/**/*",
+  ],
+  "exclude": [
+    "./fixtures/**/*",
+  ],
+  "baseUrl": "./",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "outDir": "./lib",
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@fixtures/*": ["./fixtures/*"],
+    }
+  }
+}

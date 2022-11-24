@@ -1,0 +1,8 @@
+node_modules
+build
+lib
+npm-debug.log
+.nyc
+.env
+.DS_Store
+.cache
