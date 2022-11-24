@@ -16,11 +16,8 @@ const main = async () => {
     console.error('error reading csv file, exiting with: ', e)
   }
 
-  // for (const row of data) {
-    const row = data.find((d) => d.id === '127')
-    if (!row) {
-      return
-    }
+  // todo batch queries for performance
+  for (const row of data) {
     Scraper.setCSVRowID({id: row.id});
     const url = row.video_url; 
     try {
@@ -31,9 +28,9 @@ const main = async () => {
       row.retweets = updated.retweets;
     } catch (e) {
       console.log("error parsing data: ", row.id)
-      // continue;
+      continue;
     }
-  // }
+  }
   await Scraper.dispose();
   CSVService.updateCSV()
 }
